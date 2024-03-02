@@ -47,7 +47,14 @@ export default function ToDo() {
       <Header title="To-Do" />
 
       <main className="h-[90vh]">
-        <div className="flex flex-col items-center justify-center gap-2 bg-blue py-8">
+        {/* Item Input */}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
+          className="flex flex-col items-center justify-center gap-2 bg-blue py-8"
+        >
           <label className="text-light text-3xl" htmlFor="todoInput">
             Enter to-do here:
           </label>
@@ -56,19 +63,22 @@ export default function ToDo() {
             id="todoInput"
             value={newItem}
             onChange={handleValue}
-          ></input>
+            placeholder="Enter a new item..."
+          />
           <button
             className="text-light text-3xl bg-rose px-4 py-2 rounded-xl"
             onClick={handleSubmit}
           >
             ENTER
           </button>
-        </div>
+        </form>
+
+        {/* Items List */}
         <div className="bg-turqoise flex flex-col items-center min-h-fit ">
           <ol className="text-light list-decimal py-4">
             {items.map((item, index) => {
               return (
-                <React.Fragment key={-1}>
+                <React.Fragment key={-1986}>
                   <li key={item} className="px-2 text-xl">
                     {item}
                     <button
