@@ -1,1 +1,1 @@
-react practice.
+react, tailwind, typescript practice.
