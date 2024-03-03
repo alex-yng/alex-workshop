@@ -9,18 +9,18 @@ export default {
       black: "#1D1D34",
       gray: {
         dark: "#2A2D3C",
-        default: "#3B3E54",
+        DEFAULT: "#3B3E54",
         light: "#4C506B",
       },
       midnight: "#2C2C4E",
       green: {
         dark: "#262C2B",
-        default: "#262C2B",
+        DEFAULT: "#262C2B",
         light: "#424C4B",
       },
       violet: {
         dark: "#735D83",
-        default: "#887099",
+        DEFAULT: "#887099",
         light: "#9C88AA",
       },
     },
