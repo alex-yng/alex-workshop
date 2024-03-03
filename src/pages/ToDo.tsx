@@ -38,7 +38,7 @@ export default function ToDo() {
   }
 
   function itemDelete(index: number): void {
-    const updatedItems = items.filter((e, i) => i !== index);
+    const updatedItems = items.filter((_, i) => i !== index);
     setItems(updatedItems);
   }
 
