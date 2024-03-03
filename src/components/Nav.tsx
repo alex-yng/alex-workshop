@@ -13,7 +13,7 @@ export default function Nav({
             <>
               <div className="group">
                 <a
-                  className="hover:text-slate-400 transition-[colors,opacity] duration-500"
+                  className="hover:text-slate-400  group-hover:text-violet transition-colors duration-500"
                   href={link.path}
                 >
                   {link.name}

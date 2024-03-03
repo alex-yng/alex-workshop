@@ -9,14 +9,16 @@ export default function Home() {
         {/* Hero Content */}
         <div className="grid grid-rows-2 grid-cols-3 items-baseline gap-4">
           <h1 className="text-9xl tracking-wider col-span-3">THE WORKSHOP</h1>
-          <h3 className="text-xl tracking-widest text-violet">by alex.yng</h3>
-          <div className="max-w-fit justify-self-center text-xl opacity-80 hover:opacity-100 pr-4">
+          <h3 className="text-xl tracking-widest text-violet-dark">
+            by alex.yng
+          </h3>
+          <div className="max-w-fit justify-self-center text-xl pr-4 text-silver-dark">
             <Nav
               links={[{ name: "see more", path: "#projects" }]}
               fontWeight="thin"
             />
           </div>
-          <div className="max-w-fit justify-self-end text-xl pr-4">
+          <div className="max-w-fit justify-self-end text-xl pr-4 text-silver-dark">
             <Nav
               links={[{ name: "about", path: "/about" }]}
               fontWeight="thin"
