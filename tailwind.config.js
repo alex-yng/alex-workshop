@@ -3,14 +3,28 @@ export default {
   mode: "jit",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        light: "#EFEFEF",
-        blue: "#3454D1",
-        turqoise: "#34D1BF",
-        dark: "#070707",
-        rose: "#D1345B",
+    colors: {
+      dark: "#0F0F1A",
+      light: "#E1E0E0",
+      black: "#1D1D34",
+      gray: {
+        dark: "#2A2D3C",
+        default: "#3B3E54",
+        light: "#4C506B",
       },
+      midnight: "#2C2C4E",
+      green: {
+        dark: "#262C2B",
+        default: "#262C2B",
+        light: "#424C4B",
+      },
+      violet: {
+        dark: "#735D83",
+        default: "#887099",
+        light: "#9C88AA",
+      },
+    },
+    extend: {
       fontFamily: {
         sans: ["'Overused Grotesk'", "sans-serif"],
       },

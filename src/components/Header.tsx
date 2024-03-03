@@ -10,7 +10,7 @@ export default function Header({
   return (
     <>
       <div className="grid place-items-center place-content-center grid-cols-3 bg-dark text-light py-4">
-        <h1 className="text-4xl font-medium">
+        <h1 className="text-4xl font-medium text-light">
           <a href="/">Workshop</a>
         </h1>
         <h2 className="text-5xl font-semibold tracking-wide">{title}</h2>

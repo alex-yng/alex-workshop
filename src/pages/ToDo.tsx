@@ -53,7 +53,7 @@ export default function ToDo() {
             e.preventDefault();
             handleSubmit();
           }}
-          className="flex flex-col items-center justify-center gap-2 bg-blue py-8"
+          className="flex flex-col items-center justify-center gap-2 bg-midnight py-8"
         >
           <label className="text-light text-3xl" htmlFor="todoInput">
             Enter to-do here:
@@ -66,7 +66,7 @@ export default function ToDo() {
             placeholder="Enter a new item..."
           />
           <button
-            className="text-light text-3xl bg-rose px-4 py-2 rounded-xl"
+            className="text-light text-3xl bg-midnight px-4 py-2 rounded-xl"
             onClick={handleSubmit}
           >
             ENTER
@@ -74,7 +74,7 @@ export default function ToDo() {
         </form>
 
         {/* Items List */}
-        <div className="bg-turqoise flex flex-col items-center min-h-fit ">
+        <div className="bg-gray flex flex-col items-center min-h-fit ">
           <ol className="text-light list-decimal py-4">
             {items.map((item, index) => {
               return (
