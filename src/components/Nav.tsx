@@ -3,11 +3,11 @@ export default function Nav({
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
   ],
-  fontWeight = "semibold",
+  fontWeight = "light",
 }) {
   return (
     <>
-      <nav className={`flex gap-4 text-x font-${fontWeight} tracking-widest`}>
+      <nav className={`flex gap-4 text-xl font-${fontWeight} tracking-widest`}>
         {links.map((link) => {
           return (
             <>

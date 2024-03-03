@@ -46,14 +46,14 @@ export default function ToDo() {
     <>
       <Header title="To-Do" />
 
-      <main className="h-[90vh]">
+      <main className="container mx-auto py-16 px-8 my-44 grid grid-cols-4 gap-3">
         {/* Item Input */}
         <form
           onSubmit={(e) => {
             e.preventDefault();
             handleSubmit();
           }}
-          className="flex flex-col items-center justify-center gap-2 bg-midnight py-8"
+          className="flex flex-col items-center justify-center gap-2 bg-midnight py-8 h-96 rounded-l-3xl rounded-r-lg width-full"
         >
           <label className="text-light text-3xl" htmlFor="todoInput">
             Enter to-do here:
@@ -74,8 +74,8 @@ export default function ToDo() {
         </form>
 
         {/* Items List */}
-        <div className="bg-gray flex flex-col items-center min-h-fit ">
-          <ol className="text-light list-decimal py-4">
+        <div className="bg-gray flex flex-col rounded-r-3xl rounded-l-lg px-16 col-span-3">
+          <ol className="text-light list-decimal py-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {items.map((item, index) => {
               return (
                 <React.Fragment key={-1986}>
@@ -97,7 +97,7 @@ export default function ToDo() {
                       className="text-2xl px-1 text-rose"
                       onClick={() => itemDelete(index)}
                     >
-                      X
+                      ❎
                     </button>
                   </li>
                 </React.Fragment>
