@@ -1,9 +1,10 @@
 export default function Nav({
+  fontWeight = "light",
+  textColor = "light",
   links = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
   ],
-  fontWeight = "light",
 }) {
   return (
     <>
@@ -18,7 +19,9 @@ export default function Nav({
                 >
                   {link.name}
                 </a>
-                <hr className="text-light w-0 group-hover:w-full transition-[width] duration-300"></hr>
+                <hr
+                  className={`text-${textColor} w-0 group-hover:w-full transition-[width] duration-300`}
+                ></hr>
               </div>
             </>
           );

@@ -1,6 +1,7 @@
 import React from "react";
 import { ChangeEvent, useState } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function ToDo() {
   const [newItem, setNewItem] = useState("");
@@ -44,7 +45,7 @@ export default function ToDo() {
 
   return (
     <>
-      <Header title="To-Do" />
+      <Header title="to-do" bgColor="gray" />
 
       <main className="container mx-auto py-16 px-8 my-44 grid grid-cols-4 gap-3">
         {/* Item Input */}
@@ -53,28 +54,22 @@ export default function ToDo() {
             e.preventDefault();
             handleSubmit();
           }}
-          className="flex flex-col items-center justify-center gap-2 bg-midnight py-8 h-96 rounded-l-3xl rounded-r-lg width-full"
+          className="flex flex-col items-center justify-center gap-4 bg-midnight py-8 h-96 rounded-l-3xl rounded-r-lg width-full"
         >
           <label className="text-light text-3xl" htmlFor="todoInput">
-            Enter to-do here:
+            enter to-do:
           </label>
           <input
-            className="block"
+            className="block text-light bg-black outline-none focus:outline-violet-light py-1 px-2"
             id="todoInput"
             value={newItem}
             onChange={handleValue}
             placeholder="Enter a new item..."
           />
-          <button
-            className="text-light text-3xl bg-midnight px-4 py-2 rounded-xl"
-            onClick={handleSubmit}
-          >
-            ENTER
-          </button>
         </form>
 
         {/* Items List */}
-        <div className="bg-gray flex flex-col rounded-r-3xl rounded-l-lg px-16 col-span-3">
+        <div className="bg-black flex flex-col rounded-r-3xl rounded-l-lg px-16 col-span-3">
           <ol className="text-light list-decimal py-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {items.map((item, index) => {
               return (
@@ -107,9 +102,7 @@ export default function ToDo() {
         </div>
       </main>
 
-      <footer>
-        <p className="text-light text-center">&copy; Alex Young Practice</p>
-      </footer>
+      <Footer />
     </>
   );
 }
