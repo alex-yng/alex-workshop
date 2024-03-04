@@ -45,7 +45,7 @@ export default function ToDo() {
 
   return (
     <>
-      <Header title="to-do" bgColor="gray" />
+      <Header title="to-do" bgColor="bg-gray" />
 
       <main className="container mx-auto py-16 px-8 my-44 grid grid-cols-4 gap-3">
         {/* Item Input */}

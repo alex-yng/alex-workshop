@@ -2,8 +2,8 @@ import Nav from "./Nav";
 
 export default function Header({
   title = "",
-  textColor = "light",
-  bgColor = "",
+  textColor = "text-light",
+  bgColor = "bg-dark",
   links = [
     { name: "home", path: "/" },
     { name: "about", path: "/about" },
@@ -12,7 +12,7 @@ export default function Header({
   return (
     <>
       <div
-        className={`grid place-items-center place-content-center grid-cols-3 py-4 text-${textColor} bg-${bgColor}`}
+        className={`grid place-items-center place-content-center grid-cols-3 py-4 ${textColor} ${bgColor}`}
       >
         <h1 className="text-2xl font-thin tracking-wider text-light">
           <a href="/">Workshop</a>
