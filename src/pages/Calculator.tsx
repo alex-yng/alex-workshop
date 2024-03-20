@@ -1,132 +1,93 @@
-import { useState } from "react";
-import CalcButton from "../components/CalculatorComponents/CalcButton";
-import Footer from "../components/Footer";
+import Wrapper from "../components/CalculatorComponents/Wrapper";
+import Screen from "../components/CalculatorComponents/Screen";
+import ButtonBox from "../components/CalculatorComponents/ButtonBox";
+import Button from "../components/CalculatorComponents/Button";
 import Header from "../components/Header";
+import { useState, useEffect } from "react";
 
-export default function Calculator() {
-  const [operands, setOperands] = useState([]);
-  const [operator1, setOperator1] = useState([]);
-  const [operator2, setOperator2] = useState([]);
-  const [waitingForOperand, setWaitingForOperand] = useState(false);
+const Calculator = () => {
+  const [input, setInput] = useState("");
+  const [operator, setOperator] = useState("");
+  const [result, setResult] = useState("");
 
-  function handleOperand(): void {
-    throw new Error("Function not implemented.");
-  }
-  function handleClear(): void {
-    throw new Error("Function not implemented.");
-  }
-  function handleNegate(): void {
-    throw new Error("Function not implemented.");
-  }
-  function handleOperator(): void {
-    throw new Error("Function not implemented.");
-  }
-  function handleDecimal(): void {
-    throw new Error("Function not implemented.");
-  }
-  function handleCalculation(): void {
-    throw new Error("Function not implemented.");
-  }
-  function updateDisplay(): void {}
+  const btnValues = [
+    ["C", "+/-", "%", "/"],
+    [7, 8, 9, "X"],
+    [4, 5, 6, "-"],
+    [1, 2, 3, "+"],
+    [0, ".", "="],
+  ];
+
+  const handleButtonClick = (value: string) => {
+    if (value === "=" || value === "Enter") {
+      // Perform calculation
+      try {
+        const result = eval(input);
+        setResult(result.toString());
+      } catch (error) {
+        setResult("Error");
+      }
+    } else if (value === "C" || value === "Backspace") {
+      // Clear input and result
+      setInput("");
+      setResult("");
+    } else {
+      // Append value to input
+      setInput((prevInput) => prevInput + value);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      const { key, shiftKey } = event;
+      if (/[0-9]/.test(key)) {
+        event.preventDefault();
+        handleButtonClick(key);
+      } else if (key === "+" && shiftKey) {
+        handleButtonClick("+");
+      } else if (key === "Enter") {
+        event.preventDefault();
+        handleButtonClick("=");
+      } else if (key === "Backspace") {
+        event.preventDefault();
+        handleButtonClick("C");
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <>
-      <Header title="calculator" bgColor="bg-green-light" />
+      <Header title='calculator' />
 
-      {/* Main */}
-      <main>
-        <div className="calculator max-w-64 h-96 grid grid-rows-7 grid-cols-4 mx-auto my-48 gap-1 bg-gray text-light rounded-2xl">
-          <div className="screen row-span-2 col-span-4 bg-midnight rounded-t-2xl"></div>
-          <CalcButton text="C" bgColor="bg-gray" onclick={handleClear} />
-          <CalcButton text="+-" bgColor="bg-gray" onclick={handleNegate} />
-          <CalcButton text="%" bgColor="bg-gray" onclick={handleOperator} />
-          <CalcButton
-            text="/"
-            bgColor="bg-green-light"
-            onclick={handleOperator}
-          />
-          <CalcButton
-            text="7"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="8"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="9"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="X"
-            bgColor="bg-green-light"
-            onclick={handleOperator}
-          />
-          <CalcButton
-            text="4"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="5"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="6"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="-"
-            bgColor="bg-green-light"
-            onclick={handleOperator}
-          />
-          <CalcButton
-            text="1"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="2"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="3"
-            bgColor="bg-gray-light"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="+"
-            bgColor="bg-green-light"
-            onclick={handleOperator}
-          />
-          <CalcButton
-            text="0"
-            bgColor="bg-gray-light"
-            rounding="rounded-bl-2xl"
-            onclick={handleOperand}
-          />
-          <CalcButton
-            text="."
-            bgColor="bg-gray-light"
-            onclick={handleDecimal}
-          />
-          <CalcButton
-            text="="
-            bgColor="bg-green"
-            colSpan="2"
-            rounding="rounded-br-2xl"
-            onclick={handleCalculation}
-          />
-        </div>
-      </main>
-
-      <Footer />
+      <Wrapper>
+        <Screen display={input} pastDisplay={result} />
+        <ButtonBox>
+          {btnValues.flat().map((btn) => {
+            return (
+              <Button
+                text={String(btn)}
+                className={
+                  btn === "="
+                    ? "bg-violet col-span-2"
+                    : btn === "/" || btn === "X" || btn === "-" || btn === "+"
+                    ? "bg-silver-dark"
+                    : "bg-silver-light"
+                }
+                key={String(btn)}
+                onClick={() => handleButtonClick(String(btn))}
+              />
+            );
+          })}
+        </ButtonBox>
+      </Wrapper>
     </>
   );
-}
+};
+
+export default Calculator;

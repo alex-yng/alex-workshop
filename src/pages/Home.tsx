@@ -5,23 +5,23 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <div className="text-light container mx-auto grid place-items-center h-screen">
+      <div className='text-light container mx-auto grid place-items-center h-screen'>
         {/* Hero Content */}
-        <div className="grid grid-rows-2 grid-cols-3 items-baseline gap-4">
-          <h1 className="text-9xl tracking-wider col-span-3">THE WORKSHOP</h1>
-          <h3 className="text-xl tracking-widest text-violet-dark">
+        <div className='grid grid-rows-2 grid-cols-3 items-baseline gap-4'>
+          <h1 className='text-9xl tracking-wider col-span-3'>THE WORKSHOP</h1>
+          <h3 className='text-xl tracking-widest text-violet-dark'>
             by alex.yng
           </h3>
-          <div className="max-w-fit justify-self-center text-xl pr-4 text-silver-dark">
+          <div className='max-w-fit justify-self-center text-xl pr-4 text-silver-dark'>
             <Nav
               links={[{ name: "see more", path: "#projects" }]}
-              fontWeight="thin"
+              fontWeight='thin'
             />
           </div>
-          <div className="max-w-fit justify-self-end text-xl pr-4 text-silver-dark">
+          <div className='max-w-fit justify-self-end text-xl pr-4 text-silver-dark'>
             <Nav
               links={[{ name: "about", path: "/about" }]}
-              fontWeight="thin"
+              fontWeight='thin'
             />
           </div>
         </div>
@@ -29,14 +29,17 @@ export default function Home() {
 
       {/* Project View */}
       <div
-        id="projects"
-        className="grid grid-cols-2 place-items-center container mx-auto p-16 gap-8"
+        id='projects'
+        className='grid grid-cols-2 place-items-center container mx-auto p-16 gap-8'
       >
-        <div className="my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500">
-          <ProjectCard text="to-do List" link="/todo" />
+        <div className='my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
+          <ProjectCard text='to-do List' link='/todo' />
         </div>
-        <div className="my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500">
-          <ProjectCard text="calculator" link="/calculator" />
+        <div className='my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
+          <ProjectCard text='calculator' link='/calculator' />
+        </div>
+        <div className='my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
+          <ProjectCard text='gallery' link='/gallery' />
         </div>
       </div>
     </>

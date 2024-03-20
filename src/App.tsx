@@ -4,16 +4,18 @@ import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
 import Error from "./pages/Error.tsx";
 import Calculator from "./pages/Calculator.tsx";
+import Gallery from "./pages/Gallery.tsx";
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="/about" Component={About} />
-        <Route path="/todo" Component={ToDo} />
-        <Route path="/calculator" Component={Calculator} />
-        <Route path="*" Component={Error} />
+        <Route path='/' Component={Home} />
+        <Route path='/about' Component={About} />
+        <Route path='/todo' Component={ToDo} />
+        <Route path='/calculator' Component={Calculator} />
+        <Route path='/gallery' Component={Gallery} />
+        <Route path='*' Component={Error} />
       </Routes>
     </Router>
   );
