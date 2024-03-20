@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
-  const [operator, setOperator] = useState("");
   const [result, setResult] = useState("");
 
   const btnValues = [
