@@ -45,60 +45,62 @@ export default function ToDo() {
 
   return (
     <>
-      <Header title="to-do" bgColor="bg-gray" />
+      <Header title='to-do' bgColor='bg-gray' />
 
-      <main className="container mx-auto py-16 px-8 my-44 grid grid-cols-4 gap-3">
-        {/* Item Input */}
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-          className="flex flex-col items-center justify-center gap-4 bg-midnight py-8 h-96 rounded-l-3xl rounded-r-lg width-full"
-        >
-          <label className="text-light text-3xl" htmlFor="todoInput">
-            enter to-do:
-          </label>
-          <input
-            className="block text-light bg-black outline-none focus:outline-violet-light py-1 px-2"
-            id="todoInput"
-            value={newItem}
-            onChange={handleValue}
-            placeholder="Enter a new item..."
-          />
-        </form>
+      <main className='h-screen grid place-items-center'>
+        <div className='container mx-auto py-16 px-8 my-44 grid grid-cols-4 gap-3'>
+          {/* Item Input */}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}
+            className='flex flex-col items-center justify-center gap-4 bg-midnight py-8 h-96 rounded-l-3xl rounded-r-lg width-full'
+          >
+            <label className='text-light text-3xl' htmlFor='todoInput'>
+              enter to-do:
+            </label>
+            <input
+              className='block text-light bg-black outline-none focus:outline-violet-light py-1 px-2'
+              id='todoInput'
+              value={newItem}
+              onChange={handleValue}
+              placeholder='Enter a new item...'
+            />
+          </form>
 
-        {/* Items List */}
-        <div className="bg-black flex flex-col rounded-r-3xl rounded-l-lg px-16 col-span-3">
-          <ol className="text-light list-decimal py-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {items.map((item, index) => {
-              return (
-                <React.Fragment key={-1986}>
-                  <li key={item} className="px-2 text-xl">
-                    {item}
-                    <button
-                      className="text-2xl pl-4 pr-1"
-                      onClick={() => itemUp(index)}
-                    >
-                      ⬆️
-                    </button>
-                    <button
-                      className="text-2xl"
-                      onClick={() => itemDown(index)}
-                    >
-                      ⬇️
-                    </button>
-                    <button
-                      className="text-2xl px-1 text-rose"
-                      onClick={() => itemDelete(index)}
-                    >
-                      ❎
-                    </button>
-                  </li>
-                </React.Fragment>
-              );
-            })}
-          </ol>
+          {/* Items List */}
+          <div className='bg-black flex flex-col rounded-r-3xl rounded-l-lg px-16 col-span-3'>
+            <ol className='text-light list-decimal py-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+              {items.map((item, index) => {
+                return (
+                  <React.Fragment key={-1986}>
+                    <li key={item} className='px-2 text-xl'>
+                      {item}
+                      <button
+                        className='text-2xl pl-4 pr-1'
+                        onClick={() => itemUp(index)}
+                      >
+                        ⬆️
+                      </button>
+                      <button
+                        className='text-2xl'
+                        onClick={() => itemDown(index)}
+                      >
+                        ⬇️
+                      </button>
+                      <button
+                        className='text-2xl px-1 text-rose'
+                        onClick={() => itemDelete(index)}
+                      >
+                        ❎
+                      </button>
+                    </li>
+                  </React.Fragment>
+                );
+              })}
+            </ol>
+          </div>
         </div>
       </main>
 

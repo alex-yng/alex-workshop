@@ -12,7 +12,7 @@ export default function Header({
   return (
     <>
       <div
-        className={`fixed w-full grid place-items-center place-content-center grid-cols-3 py-4 ${textColor} ${bgColor}`}
+        className={`absolute w-full grid place-items-center place-content-center grid-cols-3 py-4 ${textColor} ${bgColor}`}
       >
         <h1 className='text-2xl font-thin tracking-wider text-light'>
           <a href='/'>Workshop</a>

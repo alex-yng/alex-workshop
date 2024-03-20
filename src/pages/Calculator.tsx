@@ -4,6 +4,7 @@ import ButtonBox from "../components/CalculatorComponents/ButtonBox";
 import Button from "../components/CalculatorComponents/Button";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
+import Footer from "../components/Footer";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
@@ -64,27 +65,31 @@ const Calculator = () => {
     <>
       <Header title='calculator' />
 
-      <Wrapper>
-        <Screen display={input} pastDisplay={result} />
-        <ButtonBox>
-          {btnValues.flat().map((btn) => {
-            return (
-              <Button
-                text={String(btn)}
-                className={
-                  btn === "="
-                    ? "bg-violet col-span-2"
-                    : btn === "/" || btn === "X" || btn === "-" || btn === "+"
-                    ? "bg-silver-dark"
-                    : "bg-silver-light"
-                }
-                key={String(btn)}
-                onClick={() => handleButtonClick(String(btn))}
-              />
-            );
-          })}
-        </ButtonBox>
-      </Wrapper>
+      <main className='h-screen grid place-items-center'>
+        <Wrapper>
+          <Screen display={input} pastDisplay={result} />
+          <ButtonBox>
+            {btnValues.flat().map((btn) => {
+              return (
+                <Button
+                  text={String(btn)}
+                  className={
+                    btn === "="
+                      ? "bg-violet col-span-2"
+                      : btn === "/" || btn === "X" || btn === "-" || btn === "+"
+                      ? "bg-silver-dark"
+                      : "bg-silver-light"
+                  }
+                  key={String(btn)}
+                  onClick={() => handleButtonClick(String(btn))}
+                />
+              );
+            })}
+          </ButtonBox>
+        </Wrapper>
+      </main>
+
+      <Footer />
     </>
   );
 };
