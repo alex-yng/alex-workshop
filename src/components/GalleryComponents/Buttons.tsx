@@ -1,17 +1,6 @@
-type Image = {
-  index: number;
-  url: string;
-  title?: string;
-  description?: string;
-  alt: string;
-  isActive: boolean;
-};
+import { images } from "../../constants";
 
-interface images {
-  images: Image[];
-}
-
-const Buttons = ({ images }: images) => {
+const Buttons = ({ activeIndex }: { activeIndex: number }) => {
   return (
     <div className='flex gap-2'>
       {images.map((img, idx) => {
@@ -19,7 +8,7 @@ const Buttons = ({ images }: images) => {
           <button
             key={idx}
             className={`flex justify-center items-center rounded-full border-2 border-light size-4 ${
-              img.isActive ? "bg-light" : ""
+              img.index === activeIndex ? "bg-light" : ""
             }`}
             onClick={() => {}}
           >

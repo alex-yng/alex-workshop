@@ -5,7 +5,6 @@ export const images = [
     title: "Central Park Skyscrapers",
     description: "Picture of skyscrapers around Central Park in Manhattan.",
     alt: "Central Park Skyscrapers",
-    isActive: true,
   },
   {
     index: 1,
@@ -13,7 +12,6 @@ export const images = [
     title: "Brooklyn Museum",
     description: "Inside the Brooklyn Museum.",
     alt: "Inside Brooklyn Museum",
-    isActive: false,
   },
   {
     index: 2,
@@ -21,7 +19,6 @@ export const images = [
     title: "Times Square",
     description: "Picture of Times Square at night.",
     alt: "Times Square",
-    isActive: false,
   },
   {
     index: 3,
@@ -29,6 +26,5 @@ export const images = [
     title: "Brooklyn Bridge",
     description: "Picture of the Brooklyn Bridge.",
     alt: "Brooklyn Bridge",
-    isActive: false,
   },
 ];
