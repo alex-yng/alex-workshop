@@ -9,9 +9,7 @@ const Gallery = () => {
     <>
       <Header title='Gallery' />
       <main className='w-full h-screen flex flex-col justify-center items-center'>
-        <GalleryWrapper>
-          <PhotoBox images={images} />
-        </GalleryWrapper>
+        <GalleryWrapper images={images} />
       </main>
       <Footer />
     </>

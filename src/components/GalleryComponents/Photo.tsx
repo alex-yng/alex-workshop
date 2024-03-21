@@ -15,9 +15,14 @@ const Photo = ({ images }: images) => {
   let activeImage = images.filter((img) => img.isActive === true)[0];
 
   return (
-    <>
-      <img src={activeImage.url} alt={activeImage.alt} />
-    </>
+    <div className='size-[500px]'>
+      <img
+        src={activeImage.url}
+        alt={activeImage.alt}
+        className='size-full rounded-xl'
+        style={{ objectFit: "contain" }}
+      />
+    </div>
   );
 };
 
