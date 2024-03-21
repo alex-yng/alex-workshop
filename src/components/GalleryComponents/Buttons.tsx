@@ -1,7 +1,8 @@
 type Image = {
+  index: number;
   url: string;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   alt: string;
   isActive: boolean;
 };
@@ -20,6 +21,7 @@ const Buttons = ({ images }: images) => {
             className={`flex justify-center items-center rounded-full border-2 border-light size-4 ${
               img.isActive ? "bg-light" : ""
             }`}
+            onClick={() => {}}
           >
             {" "}
           </button>

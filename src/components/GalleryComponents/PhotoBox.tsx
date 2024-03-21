@@ -2,6 +2,7 @@ import Buttons from "./Buttons";
 import Photo from "./Photo";
 
 type Image = {
+  index: number;
   url: string;
   title: string;
   description: string;
@@ -16,7 +17,7 @@ interface images {
 const PhotoBox = ({ images }: images) => {
   return (
     <div className='flex flex-col gap-4 items-center justify-center'>
-      <Photo />
+      <Photo images={images} />
       <Buttons images={images} />
     </div>
   );
