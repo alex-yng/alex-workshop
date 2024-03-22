@@ -12,10 +12,14 @@ import { useState } from "react";
 const GalleryWrapper = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const handleButtonClick = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <div className='flex items-center justify-center gap-8'>
       <button
-        className='text-8xl'
+        className='text-4xl sm:text-6xl md:text-8xl'
         onClick={() => {
           setActiveIndex(() => cycleImage(activeIndex, "left"));
         }}
@@ -23,13 +27,13 @@ const GalleryWrapper = () => {
         <FontAwesomeIcon icon={faChevronLeft} color='white' />
       </button>
       <PhotoBox>
-        <div className='size-[500px]'>
+        <div className='size-[200px] sm:size-[300px] md:size-[500px]'>
           <Photo activeIndex={activeIndex} />
         </div>
-        <Buttons activeIndex={activeIndex} />
+        <Buttons activeIndex={activeIndex} setActiveIndex={handleButtonClick} />
       </PhotoBox>
       <button
-        className='text-8xl'
+        className='text-4xl sm:text-6xl md:text-8xl'
         onClick={() => {
           setActiveIndex(() => cycleImage(activeIndex, "right"));
         }}

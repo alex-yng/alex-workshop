@@ -15,7 +15,6 @@ export const cycleImage = (activeIndex: number, direction: string): number => {
       nextIndex = activeIndex + 1;
     }
   }
-  console.log("activeIndex", activeIndex);
   return nextIndex;
 };
 
