@@ -33,6 +33,32 @@ export default {
       fontFamily: {
         sans: ["'Overused Grotesk'", "sans-serif"],
       },
+      keyframes: {
+        galleryFromRight: {
+          from: {
+            transform: "translateX(100%)",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: 1,
+          },
+        },
+        galleryFromleft: {
+          from: {
+            transform: "translateX(-100%)",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateX(0)",
+            opacity: 1,
+          },
+        },
+      },
+      animation: {
+        galleryFromRight: "galleryFromRight 0.5s ease-in-out",
+        galleryFromleft: "galleryFromleft 0.5s ease-in-out",
+      },
     },
   },
   plugins: [],
