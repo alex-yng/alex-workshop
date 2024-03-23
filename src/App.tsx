@@ -11,6 +11,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path='/' Component={Home} />
+        <Route path='/home' Component={Home} />
         <Route path='/about' Component={About} />
         <Route path='/todo' Component={ToDo} />
         <Route path='/calculator' Component={Calculator} />

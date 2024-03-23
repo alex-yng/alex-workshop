@@ -30,7 +30,7 @@ export default function Home() {
       {/* Project View */}
       <div
         id='projects'
-        className='grid grid-cols-2 place-items-center container mx-auto p-16 gap-8'
+        className='flex items-center justify-around h-screen container mx-auto p-16 gap-8'
       >
         <div className='my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
           <ProjectCard text='to-do List' link='/todo' />

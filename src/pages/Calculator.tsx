@@ -5,18 +5,11 @@ import Button from "../components/CalculatorComponents/Button";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import { calcBtns } from "../constants";
 
 const Calculator = () => {
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
-
-  const btnValues = [
-    ["C", "+/-", "%", "/"],
-    [7, 8, 9, "X"],
-    [4, 5, 6, "-"],
-    [1, 2, 3, "+"],
-    [0, ".", "="],
-  ];
 
   const handleButtonClick = (value: string) => {
     if (value === "=" || value === "Enter") {
@@ -69,7 +62,7 @@ const Calculator = () => {
         <Wrapper>
           <Screen display={input} pastDisplay={result} />
           <ButtonBox>
-            {btnValues.flat().map((btn) => {
+            {calcBtns.flat().map((btn) => {
               return (
                 <Button
                   text={String(btn)}
