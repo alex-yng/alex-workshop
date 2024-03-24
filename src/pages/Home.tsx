@@ -30,16 +30,19 @@ export default function Home() {
       {/* Project View */}
       <div
         id='projects'
-        className='flex items-center justify-around h-screen container mx-auto p-16 gap-8'
+        className='grid md:grid-cols-3 lg:grid-cols-4 place-items-center h-screen container mx-auto p-16 gap-8'
       >
-        <div className='my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
+        <div className='opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
           <ProjectCard text='to-do List' link='/todo' />
         </div>
-        <div className='my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
+        <div className='opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
           <ProjectCard text='calculator' link='/calculator' />
         </div>
-        <div className='my-20 opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
+        <div className='opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
           <ProjectCard text='gallery' link='/gallery' />
+        </div>
+        <div className='opacity-80 hover:scale-105 hover:opacity-100 transition-[transform,opacity] duration-500'>
+          <ProjectCard text='lc tracker' link='/leetcode' />
         </div>
       </div>
     </>
