@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import fetchData, { Stats } from "../lib/LeetcodeLogic/fetchData";
+import fetchData from "../lib/LeetcodeLogic/fetchData";
 
 const Leetcode = () => {
   let username = "alicks111";
-  let stats: Stats = {
+  let stats = {
     status: "",
     message: "",
     totalSolved: 0,
