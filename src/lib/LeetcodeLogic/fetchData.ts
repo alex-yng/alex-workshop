@@ -1,3 +1,5 @@
+import { emptyLcStats } from "../../constants";
+
 interface Stats {
   status: string;
   message: string;
@@ -16,10 +18,15 @@ interface Stats {
   submissionCalendar: any;
 }
 
-export const fetchData = async (url: string): Promise<Stats> => {
-  const response = await fetch(url);
-  const data = await response.json();
-  return data;
+export const fetchData = async (url: string) => {
+  try {
+    const response = await fetch(url);
+    const data: Stats = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return emptyLcStats;
+  }
 };
 
 export default fetchData;

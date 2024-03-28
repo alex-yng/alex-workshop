@@ -36,3 +36,21 @@ export const images = [
     alt: "Brooklyn Bridge",
   },
 ];
+
+export const emptyLcStats = {
+  status: "",
+  message: "",
+  totalSolved: 0,
+  totalQuestions: 0,
+  easySolved: 0,
+  totalEasy: 0,
+  mediumSolved: 0,
+  totalMedium: 0,
+  hardSolved: 0,
+  totalHard: 0,
+  acceptanceRate: 0,
+  ranking: 0,
+  contributionPoints: 0,
+  reputation: 0,
+  submissionCalendar: [],
+};
